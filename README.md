@@ -4,15 +4,15 @@ Dummy Python web-application that covers most of the Flask framework basic funct
 ## Usage
 This is a WSGI application, for apache2 users you would need to install `libapache2-mod-wsgi` and enable it - `a2enmod wsgi`.
 
-In your virtual host:
+In your virtual host (change values in square brackets to yours):
 ```
 <VirtualHost *:80>
         ...
 
-        WSGIDaemonProcess py-sample user=[USER] group=[GROUP] threads=5
+        WSGIDaemonProcess [APP_NAME] user=[USER] group=[GROUP] threads=5
         WSGIScriptAlias / [PATH_TO_YOUR_SOURCES]/sample.wsgi
         <Directory "[PATH_TO_YOUR_SOURCES]">
-                WSGIProcessGroup APP_NAME
+                WSGIProcessGroup [APP_NAME]
                 WSGIApplicationGroup %{GLOBAL}
                 AllowOverride All
         </Directory>
@@ -20,6 +20,8 @@ In your virtual host:
         ...
 </VirtualHost>
 ```
+
+When making changes to sources, make sure to run `reload.sh`. Otherwise there would be no changes in the browser, even after reload.
 
 ## Credits
 Based on this tutorial: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
