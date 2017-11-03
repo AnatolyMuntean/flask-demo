@@ -2,7 +2,11 @@
 Dummy Python web-application that covers most of the Flask framework basic functionality.
 
 ## Usage
-This is a WSGI application, for apache2 users you would need to install `libapache2-mod-wsgi` and enable it - `a2enmod wsgi`.
+Run directly by typing in terminal `./run.py`
+
+**OR**
+
+Run as a WSGI application, for apache2 users you would need to install `libapache2-mod-wsgi` and enable it - `a2enmod wsgi`.
 
 In your virtual host (change values in square brackets to yours):
 ```
