@@ -1,6 +1,6 @@
 import sys
-# Change to your paths.
-# sys.path.append('/home/am/.local/lib/python3.5/site-packages')
-# sys.path.append('/var/www/dev/py/sample')
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import app as application
