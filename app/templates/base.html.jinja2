@@ -10,9 +10,10 @@
 </head>
 <body>
     <div>
-        <span>Microblog: </span>
+        <span>Microblog:&nbsp;</span>
         <a href="/index">Home</a>
         {% if g.user.is_authenticated %}
+        &nbsp;|&nbsp;<a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
         &nbsp;|&nbsp;<a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
     </div>
