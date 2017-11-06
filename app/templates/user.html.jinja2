@@ -15,6 +15,13 @@
                 {% if g.user.id == user.id %}
                     <p><a href="{{ url_for('edit') }}">Edit</a></p>
                 {% endif %}
+                <p>{{ user.followers.count() }} <span>follower(s)</span>&nbsp;|&nbsp;
+                    {% if not g.user.is_following(user) %}
+                        <a href="{{ url_for('follow', nickname=user.nickname) }}">Follow</a>
+                    {% else %}
+                        <a href="{{ url_for('unfollow', nickname=user.nickname) }}">Stop following</a>
+                    {% endif %}
+                </p>
             </td>
         </tr>
     </table>
