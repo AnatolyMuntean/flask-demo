@@ -25,7 +25,9 @@ In your virtual host (change values in square brackets to yours):
 </VirtualHost>
 ```
 
-When making changes to sources, make sure to run `reload.sh`. Otherwise there would be no changes in the browser, even after reload.
+Create the database (SQLite) by running in terminal `./db_create.py`.
+
+When running as WSGI application and after making changes to sources, make sure to run `./reload.sh`.
 
 ## Credits
 Based on this tutorial: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world

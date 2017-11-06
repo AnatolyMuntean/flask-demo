@@ -8,10 +8,16 @@
             <tr>
                 <td>Your nickname:</td>
                 <td>{{ form.nickname(size=24) }}</td>
+                {% for error in form.errors.nickname %}
+                    <p><span style="color: red;">[{{ error }}]</span></p>
+                {% endfor %}
             </tr>
             <tr>
                 <td>About yourself:</td>
                 <td>{{ form.about_me(cols=32, rows=4) }}</td>
+                {% for error in form.errors.about_me %}
+                    <p><span style="color: red;">[{{ error }}]</span></p>
+                {% endfor %}
             </tr>
             <tr>
                 <td></td>
