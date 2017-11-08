@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     {% if title %}
@@ -10,11 +10,16 @@
 </head>
 <body>
     <div>
-        <span>Microblog:&nbsp;</span>
-        <a href="/index">Home</a>
+        <span>Microblog:</span>&nbsp;
+        <span></span><a href="/index">Home</a></span>
         {% if g.user.is_authenticated %}
-        &nbsp;|&nbsp;<a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
-        &nbsp;|&nbsp;<a href="{{ url_for('logout') }}">Logout</a>
+            <span>&nbsp;|&nbsp;<a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a></span>
+            <form style="display: inline;" action="{{ url_for('search') }}" method="post" name="search">
+                {{ g.search_form.hidden_tag() }}
+                {{ g.search_form.search(size=20) }}
+                <input type="submit" value="Search" />
+            </form>
+            <span>&nbsp;|&nbsp;<a href="{{ url_for('logout') }}">Logout</a></span>
         {% endif %}
     </div>
     <hr />
