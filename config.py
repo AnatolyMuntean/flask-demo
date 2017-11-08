@@ -24,3 +24,6 @@ MAIL_PASSWORD = None
 
 # admin list
 ADMINS = ['dev@localhost']
+
+# pagination
+POSTS_PER_PAGE = 3
